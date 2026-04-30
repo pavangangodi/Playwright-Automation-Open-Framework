@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+@layer components {
+  .bg-app {
+    background:
+      linear-gradient(120deg, rgba(248, 250, 252, 0.94), rgba(241, 245, 249, 0.92)),
+      #f8fafc;
+  }
+
+  .glass-panel {
+    @apply rounded-[1.25rem] backdrop-blur-2xl;
+  }
+
+  .surface-panel {
+    @apply rounded-[1.65rem] border border-white/80 bg-white/80 p-5 shadow-soft backdrop-blur-2xl md:p-6;
+  }
+
+  .panel-title {
+    @apply flex items-start gap-3;
+  }
+
+  .panel-title h2 {
+    @apply text-base font-black tracking-normal text-slate-950;
+  }
+
+  .panel-title p {
+    @apply mt-1 text-sm font-medium leading-6 text-slate-500;
+  }
+
+  .nav-button {
+    @apply flex h-12 items-center gap-3 rounded-2xl px-4 text-sm font-black text-slate-600 transition hover:bg-slate-100 hover:text-slate-950;
+  }
+
+  .nav-button-active {
+    @apply bg-slate-950 text-white shadow-soft hover:bg-slate-950 hover:text-white;
+  }
+
+  .stepper-row {
+    @apply flex items-center gap-3 rounded-2xl px-2 py-2.5 text-slate-400 transition hover:bg-white/10 hover:text-white;
+  }
+
+  .stepper-row-active {
+    @apply bg-white/10 text-white;
+  }
+
+  .stepper-dot {
+    @apply grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-white/5 text-xs font-black text-slate-300 transition;
+  }
+
+  .stepper-dot-active {
+    @apply border-teal-300 bg-teal-300 text-slate-950 shadow-glow;
+  }
+
+  .stepper-dot-complete {
+    @apply border-emerald-300 bg-emerald-400 text-slate-950;
+  }
+
+  .field-shell {
+    @apply relative flex flex-col gap-1.5;
+  }
+
+  .field-label {
+    @apply text-xs font-black uppercase tracking-[0.16em] text-slate-500;
+  }
+
+  .input-control {
+    @apply min-h-11 w-full rounded-2xl border border-slate-200 bg-white px-3.5 text-sm font-semibold text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-teal-400 focus:ring-4 focus:ring-teal-100;
+  }
+
+  .floating-menu {
+    @apply absolute left-0 right-0 top-[4.75rem] z-30 rounded-[1.1rem] border border-slate-200 bg-white p-2 shadow-soft;
+  }
+
+  .menu-option {
+    @apply flex w-full items-center justify-between rounded-xl px-3 py-2.5 text-left text-sm font-bold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950;
+  }
+
+  .menu-option-active {
+    @apply bg-teal-50 text-teal-700;
+  }
+
+  .tag {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-black;
+  }
+
+  .tag-teal {
+    @apply bg-teal-50 text-teal-700 ring-1 ring-teal-100;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-2xl bg-slate-950 px-5 text-sm font-black text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-slate-800 hover:shadow-glow focus:outline-none focus:ring-4 focus:ring-teal-100;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-2xl border border-slate-200 bg-white px-5 text-sm font-black text-slate-950 transition hover:-translate-y-0.5 hover:border-teal-200 hover:bg-teal-50 focus:outline-none focus:ring-4 focus:ring-teal-100;
+  }
+
+  .icon-text-button {
+    @apply inline-flex min-h-10 items-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-black text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:text-slate-950;
+  }
+
+  .tab-button {
+    @apply inline-flex h-10 items-center gap-2 rounded-full px-4 text-sm font-black text-slate-500 transition;
+  }
+
+  .tab-button-active {
+    @apply bg-slate-950 text-white shadow-sm;
+  }
+
+  .coverage-accordion {
+    @apply rounded-[1.2rem] border border-slate-200 bg-white p-4 transition hover:border-teal-200 hover:shadow-soft;
+  }
+
+  .coverage-accordion-selected {
+    @apply border-teal-300 bg-teal-50/45;
+  }
+
+  .choice-card {
+    @apply flex min-h-24 flex-col justify-between rounded-[1.2rem] border border-slate-200 bg-white p-4 text-left transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-soft;
+  }
+
+  .choice-card-active {
+    @apply border-teal-300 bg-teal-50 shadow-soft;
+  }
+
+  .location-card {
+    @apply flex min-h-40 flex-col rounded-[1.25rem] border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-soft;
+  }
+
+  .empty-state {
+    @apply rounded-[1.2rem] border border-dashed border-slate-300 bg-white/70 px-5 py-8 text-center text-sm font-semibold leading-6 text-slate-500;
+  }
+
+  .policy-result-card {
+    @apply grid items-center gap-4 rounded-[1.4rem] border border-white/80 bg-white/80 p-5 shadow-soft backdrop-blur-2xl md:grid-cols-[1fr_280px_auto];
+  }
+
+  .toggle {
+    @apply relative inline-flex h-9 w-16 items-center justify-between rounded-full bg-slate-200 px-2 text-slate-500 transition;
+  }
+
+  .toggle span {
+    @apply absolute left-1.5 h-6 w-6 rounded-full bg-white shadow-sm transition;
+  }
+
+  .toggle-active {
+    @apply bg-teal-500 text-white;
+  }
+
+  .toggle-active span {
+    transform: translateX(1.75rem);
+  }
+}
+
+@media (max-width: 980px) {
+  aside {
+    width: 17.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
