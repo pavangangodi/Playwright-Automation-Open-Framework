@@ -2,6 +2,12 @@
 
 A modern full-stack insurance policy management demo inspired by enterprise policy administration workflows. It combines a React + Tailwind UI, Express REST APIs, MongoDB-ready persistence, shared premium/rule logic, and Playwright end-to-end automation.
 
+## Disclaimer
+
+This project is a demo framework for learning, UI prototyping, and Playwright automation practice. It is not a production insurance system and should not be used to store real customer, policyholder, financial, claims, or personal data.
+
+The workflows, rating logic, policy numbers, business rules, and sample data are simplified examples only. They are not official Guidewire functionality and are not intended for real underwriting, compliance, billing, or policy administration decisions.
+
 ## What This Includes
 
 - Create Policy wizard with Policy Info, Location Details, Coverage Details, and Endorsements.
@@ -68,3 +74,11 @@ Do not commit real credentials or secrets.
 ## Documentation
 
 See [docs/implementation-blueprint.md](docs/implementation-blueprint.md) for UI structure, component structure, API endpoints, schema, rating logic, and Playwright test coverage.
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for the security policy and responsible usage notes.
+
+## License
+
+This project is released under the [MIT License](LICENSE).
